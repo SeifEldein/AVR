@@ -7,13 +7,11 @@
 typedef unsigned char U8;
 typedef unsigned short int USI16;
 typedef unsigned long int ULI32;
-typedef unsigned int U32;
 
 
 typedef signed char S8;
 typedef signed short int SSI16;
 typedef signed long int SL32;
-typedef signed int S32;
 
 
 typedef float F32;
