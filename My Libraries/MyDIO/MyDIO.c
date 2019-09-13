@@ -2,39 +2,39 @@
 #include"Mytype.h"
 #include"MyDIO.h"
 
-void DIO_SetPinDir(U8 PORT,U8 index,U8 PinsRange,U8 IN_OUT)
+void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 {
 	switch(PORT)
 	{
 	    case 'A':
 	    {
-	    	for(index=0;index<PinsRange;index++)
+	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRA |= (IN_OUT<<index);
+	    	    DIO_DDRA |= (IN_OUT<<PinNum);
 	    	}
 		    break;
 	    }
 	    case 'B':
 	    {
-	    	for(index=0;index<PinsRange;index++)
+	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRB |= (IN_OUT<<index);
+	    	    DIO_DDRB |= (IN_OUT<<PinNum);
 	    	}
 		    break;
 	    }
 	    case 'C':
 	    {
-	    	for(index=0;index<PinsRange;index++)
+	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRC |= (IN_OUT<<index);
+	    	    DIO_DDRC |= (IN_OUT<<PinNum);
 	    	}
 		    break;
 	    }
 	    case 'D':
 	    {
-	    	for(index=0;index<PinsRange;index++)
+	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRD |= (IN_OUT<<index);
+	    	    DIO_DDRD |= (IN_OUT<<PinNum);
 	    	}
 		    break;
 	    }

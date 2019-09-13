@@ -6,7 +6,7 @@
 
 //Prototypes
 
-void DIO_SetPinDir(U8 PORT,U8 PIN_NUM,U8 IN_OUT);
+void DIO_SetPinDir(U8 PORT,U8 PIN_NUM,U8 PinsRange,U8 IN_OUT);
 void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW);
 
 #define DIO_DDRA         (*((U8*) 0x3A))
