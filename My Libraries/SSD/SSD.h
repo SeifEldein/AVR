@@ -1,10 +1,14 @@
-//Header file guard
+/******************Header file guard*******************/
 
 #ifndef SSD_H_
 #define SSD_H_
 
+/******************Prototypes*******************/
+
 void count_up_with_switch(void);
 void count_down_with_switch(void);
+
+/***********************************************/
 
 #define Zero   0xFC
 #define One    0x60
@@ -16,6 +20,5 @@ void count_down_with_switch(void);
 #define Seven  0xE0
 #define Eight  0xFF
 #define Nine   0xF6
-
 
 #endif

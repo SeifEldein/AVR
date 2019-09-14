@@ -4,10 +4,6 @@
 #include <util/delay.h>
 
 
-void count_down_with_switch(void);
-void count_up_with_switch(void);
-
-
 void count_up_with_switch(void)
 {
 	U8 i;
