@@ -10,7 +10,14 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 	    {
 	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRA |= (IN_OUT<<PinNum);
+	    		if(IN_OUT == 1)
+	    		{
+	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    		}
+	    		else
+	    		{
+	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    		}
 	    	}
 		    break;
 	    }
@@ -18,7 +25,14 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 	    {
 	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRB |= (IN_OUT<<PinNum);
+	    		if(IN_OUT == 1)
+	    		{
+	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    		}
+	    		else
+	    		{
+	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    		}
 	    	}
 		    break;
 	    }
@@ -26,7 +40,14 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 	    {
 	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRC |= (IN_OUT<<PinNum);
+	    		if(IN_OUT == 1)
+	    		{
+	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    		}
+	    		else
+	    		{
+	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    		}
 	    	}
 		    break;
 	    }
@@ -34,7 +55,14 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 	    {
 	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
 	    	{
-	    	    DIO_DDRD |= (IN_OUT<<PinNum);
+	    		if(IN_OUT == 1)
+	    		{
+	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    		}
+	    		else
+	    		{
+	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    		}
 	    	}
 		    break;
 	    }
@@ -50,11 +78,11 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINA = (HIGH_LOW<<PIN_NUM);
+	    	    DIO_PINA = (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINA &=~ (HIGH_LOW<<PIN_NUM);
+	    		DIO_PINA &=~ (DIO_HIGH<<PIN_NUM);
 	    	}
 		    break;
 	    }
@@ -62,11 +90,11 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINB = (HIGH_LOW<<PIN_NUM);
+	    	    DIO_PINB = (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINB &=~ (HIGH_LOW<<PIN_NUM);
+	    		DIO_PINB &=~ (DIO_HIGH<<PIN_NUM);
 	    	}
 		    break;
 	    }
@@ -74,11 +102,11 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINC = (HIGH_LOW<<PIN_NUM);
+	    	    DIO_PINC = (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINC &=~ (HIGH_LOW<<PIN_NUM);
+	    		DIO_PINC &=~ (DIO_HIGH<<PIN_NUM);
 	    	}
 		    break;
 	    }
@@ -86,11 +114,11 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PIND = (HIGH_LOW<<PIN_NUM);
+	    	    DIO_PIND = (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PIND &=~ (HIGH_LOW<<PIN_NUM);
+	    		DIO_PIND &=~ (DIO_HIGH<<PIN_NUM);
 	    	};
 		    break;
 	    }
@@ -105,11 +133,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINA = (HIGH_LOW<<PORT_NUM);
+	    	    DIO_PINA = (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINA &=~ (HIGH_LOW<<PORT_NUM);
+	    		DIO_PINA &=~ (DIO_HIGH<<PORT_NUM);
 	    	}
 		    break;
 	    }
@@ -117,11 +145,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINB = (HIGH_LOW<<PORT_NUM);
+	    	    DIO_PINB = (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINB &=~ (HIGH_LOW<<PORT_NUM);
+	    		DIO_PINB &=~ (DIO_HIGH<<PORT_NUM);
 	    	}
 		    break;
 	    }
@@ -129,11 +157,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINC = (HIGH_LOW<<PORT_NUM);
+	    	    DIO_PINC = (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINC &=~ (HIGH_LOW<<PORT_NUM);
+	    		DIO_PINC &=~ (DIO_HIGH<<PORT_NUM);
 	    	}
 		    break;
 	    }
@@ -141,11 +169,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PIND = (HIGH_LOW<<PORT_NUM);
+	    	    DIO_PIND = (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PIND &=~ (HIGH_LOW<<PORT_NUM);
+	    		DIO_PIND &=~ (DIO_HIGH<<PORT_NUM);
 	    	};
 		    break;
 	    }
