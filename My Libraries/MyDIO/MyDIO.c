@@ -97,3 +97,59 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	}
 
 }
+void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
+{
+	switch(PORT)
+	{
+	    case 'A':
+	    {
+	    	if(HIGH_LOW == 1)
+	    	{
+	    	    DIO_PINA = (HIGH_LOW<<PORT_NUM);
+	    	}
+	    	else
+	    	{
+	    		DIO_PINA &=~ (HIGH_LOW<<PORT_NUM);
+	    	}
+		    break;
+	    }
+	    case 'B':
+	    {
+	    	if(HIGH_LOW == 1)
+	    	{
+	    	    DIO_PINB = (HIGH_LOW<<PORT_NUM);
+	    	}
+	    	else
+	    	{
+	    		DIO_PINB &=~ (HIGH_LOW<<PORT_NUM);
+	    	}
+		    break;
+	    }
+	    case 'C':
+	    {
+	    	if(HIGH_LOW == 1)
+	    	{
+	    	    DIO_PINC = (HIGH_LOW<<PORT_NUM);
+	    	}
+	    	else
+	    	{
+	    		DIO_PINC &=~ (HIGH_LOW<<PORT_NUM);
+	    	}
+		    break;
+	    }
+	    case 'D':
+	    {
+	    	if(HIGH_LOW == 1)
+	    	{
+	    	    DIO_PIND = (HIGH_LOW<<PORT_NUM);
+	    	}
+	    	else
+	    	{
+	    		DIO_PIND &=~ (HIGH_LOW<<PORT_NUM);
+	    	};
+		    break;
+	    }
+	}
+
+}
+
