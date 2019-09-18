@@ -21,7 +21,7 @@ void LCD_String(S8 *S);
 
 /********/
 
-/**** PORTA****/
+/**** PORTD****/
 
 #define LCD_DB0_PIN          DIO_PIN_0
 #define LCD_DB1_PIN          DIO_PIN_1
