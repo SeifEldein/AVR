@@ -78,7 +78,7 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINA = (DIO_HIGH<<PIN_NUM);
+	    	    DIO_PINA |= (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
@@ -90,7 +90,7 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINB = (DIO_HIGH<<PIN_NUM);
+	    	    DIO_PINB |= (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
@@ -102,7 +102,7 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINC = (DIO_HIGH<<PIN_NUM);
+	    	    DIO_PINC |= (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
@@ -114,7 +114,7 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PIND = (DIO_HIGH<<PIN_NUM);
+	    	    DIO_PIND |= (DIO_HIGH<<PIN_NUM);
 	    	}
 	    	else
 	    	{
@@ -125,6 +125,7 @@ void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
 	}
 
 }
+
 void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 {
 	switch(PORT)
@@ -133,11 +134,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINA = (DIO_HIGH<<PORT_NUM);
+	    	    DIO_PORTA |= (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINA &=~ (DIO_HIGH<<PORT_NUM);
+	    		DIO_PORTA &=~ (DIO_HIGH<<PORT_NUM);
 	    	}
 		    break;
 	    }
@@ -145,11 +146,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINB = (DIO_HIGH<<PORT_NUM);
+	    	    DIO_PORTB |= (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINB &=~ (DIO_HIGH<<PORT_NUM);
+	    		DIO_PORTB &=~ (DIO_HIGH<<PORT_NUM);
 	    	}
 		    break;
 	    }
@@ -157,11 +158,11 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PINC = (DIO_HIGH<<PORT_NUM);
+	    	    DIO_PORTC |= (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PINC &=~ (DIO_HIGH<<PORT_NUM);
+	    		DIO_PORTC &=~ (DIO_HIGH<<PORT_NUM);
 	    	}
 		    break;
 	    }
@@ -169,15 +170,16 @@ void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 	    {
 	    	if(HIGH_LOW == 1)
 	    	{
-	    	    DIO_PIND = (DIO_HIGH<<PORT_NUM);
+	    	    DIO_PORTD |= (DIO_HIGH<<PORT_NUM);
 	    	}
 	    	else
 	    	{
-	    		DIO_PIND &=~ (DIO_HIGH<<PORT_NUM);
+	    		DIO_PORTD &=~ (DIO_HIGH<<PORT_NUM);
 	    	};
 		    break;
 	    }
 	}
 
 }
+
 
