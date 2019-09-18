@@ -8,7 +8,7 @@ void LCD_Init(void)
 {
 	_delay_ms(60);
 
-	DIO_SetPinDir('A',LCD_DB0_PIN,LCD_DB7_PIN,DIO_HIGH);   // Set Port A as output.
+	DIO_SetPinDir('D',LCD_DB0_PIN,LCD_DB7_PIN,DIO_HIGH);   // Set Port A as output.
 	DIO_SetPinDir('B',LCD_DB0_PIN,LCD_DB2_PIN,DIO_HIGH);   // Set Port B as output.
 
 	DIO_SetPortVal('B',LCD_RS,DIO_LOW);                /* RS = 0 */

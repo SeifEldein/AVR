@@ -36,7 +36,7 @@ void LCD_String(S8 *S);
 
 /****LCD Commands****/
 
-#define LCD_Instruction      DIO_PORTA
+#define LCD_Instruction      DIO_PORTD
 #define First_Line           (0x0E)
 #define Second_Line          (0x0C)
 #define Dis_clr              (0x01)
