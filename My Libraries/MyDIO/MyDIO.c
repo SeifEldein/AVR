@@ -8,7 +8,7 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 	{
 	    case 'A':
 	    {
-	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
+	    	for(PinNum=0;PinNum<=PinsRange;PinNum++)
 	    	{
 	    		if(IN_OUT == 1)
 	    		{
@@ -23,45 +23,45 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 	    }
 	    case 'B':
 	    {
-	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
+	    	for(PinNum=0;PinNum<=PinsRange;PinNum++)
 	    	{
 	    		if(IN_OUT == 1)
 	    		{
-	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    	        DIO_DDRB |= (IN_OUT<<PinNum);
 	    		}
 	    		else
 	    		{
-	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    			DIO_DDRB &=~ (DIO_HIGH<<PinNum);
 	    		}
 	    	}
 		    break;
 	    }
 	    case 'C':
 	    {
-	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
+	    	for(PinNum=0;PinNum<=PinsRange;PinNum++)
 	    	{
 	    		if(IN_OUT == 1)
 	    		{
-	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    	        DIO_DDRC |= (IN_OUT<<PinNum);
 	    		}
 	    		else
 	    		{
-	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    			DIO_DDRC &=~ (DIO_HIGH<<PinNum);
 	    		}
 	    	}
 		    break;
 	    }
 	    case 'D':
 	    {
-	    	for(PinNum=0;PinNum<PinsRange;PinNum++)
+	    	for(PinNum=0;PinNum<=PinsRange;PinNum++)
 	    	{
 	    		if(IN_OUT == 1)
 	    		{
-	    	        DIO_DDRA |= (IN_OUT<<PinNum);
+	    	        DIO_DDRD |= (IN_OUT<<PinNum);
 	    		}
 	    		else
 	    		{
-	    			DIO_DDRA &=~ (DIO_HIGH<<PinNum);
+	    			DIO_DDRD &=~ (DIO_HIGH<<PinNum);
 	    		}
 	    	}
 		    break;
@@ -70,61 +70,29 @@ void DIO_SetPinDir(U8 PORT,U8 PinNum,U8 PinsRange,U8 IN_OUT)
 }
 
 
-void DIO_SetPinVal(U8 PORT,U8 PIN_NUM,U8 HIGH_LOW)
+U8 DIO_GetPinVal(U8 Port_Name,U8 Pin_Num)
 {
-	switch(PORT)
-	{
-	    case 'A':
-	    {
-	    	if(HIGH_LOW == 1)
-	    	{
-	    	    DIO_PINA |= (DIO_HIGH<<PIN_NUM);
-	    	}
-	    	else
-	    	{
-	    		DIO_PINA &=~ (DIO_HIGH<<PIN_NUM);
-	    	}
-		    break;
-	    }
-	    case 'B':
-	    {
-	    	if(HIGH_LOW == 1)
-	    	{
-	    	    DIO_PINB |= (DIO_HIGH<<PIN_NUM);
-	    	}
-	    	else
-	    	{
-	    		DIO_PINB &=~ (DIO_HIGH<<PIN_NUM);
-	    	}
-		    break;
-	    }
-	    case 'C':
-	    {
-	    	if(HIGH_LOW == 1)
-	    	{
-	    	    DIO_PINC |= (DIO_HIGH<<PIN_NUM);
-	    	}
-	    	else
-	    	{
-	    		DIO_PINC &=~ (DIO_HIGH<<PIN_NUM);
-	    	}
-		    break;
-	    }
-	    case 'D':
-	    {
-	    	if(HIGH_LOW == 1)
-	    	{
-	    	    DIO_PIND |= (DIO_HIGH<<PIN_NUM);
-	    	}
-	    	else
-	    	{
-	    		DIO_PIND &=~ (DIO_HIGH<<PIN_NUM);
-	    	};
-		    break;
-	    }
-	}
-
+	U8 val;
+	switch (Port_Name)
+		{
+		case 'A':
+				val = ((DIO_PINA>>Pin_Num)&(1<<0));
+				break;
+		case 'B':
+				val = ((DIO_PINB>>Pin_Num)&(1<<0));
+				break;
+		case 'C':
+				val = ((DIO_PINC>>Pin_Num)&(1<<0));
+				break;
+		case 'D':
+				val = ((DIO_PIND>>Pin_Num)&(1<<0));
+				break;
+		default:
+			break;
+		}
+	return val;
 }
+
 
 void DIO_SetPortVal(U8 PORT,U8 PORT_NUM,U8 HIGH_LOW)
 {
